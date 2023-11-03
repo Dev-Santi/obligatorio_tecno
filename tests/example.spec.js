@@ -1,8 +1,8 @@
 const { test, expect } = require("@playwright/test");
-
-let apiKey = "77c3e77d0160daa898cc6e67519d291f";
-let token =
-  "ATTAbc64b7578a2339528fc4c8614ce5c1529952f979e69bbfcbdb8f74598df30ad6CFA2A0BC";
+// incluir los valores de autentificación
+const authVariables = require('../helpers/authVariables');
+const apiKey = authVariables.apiKey;
+const token = authVariables.token;
 
 test("Check Status", async ({ request }) => {
   const response = await request.get(
