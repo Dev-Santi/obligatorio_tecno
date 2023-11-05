@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3a1c786c-45ac-4c73-adc1-daf524b66dfd" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Playwright Test JS.spec" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="agus" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;agmiar2018&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="c6d73b9f-9e2e-4feb-b8e7-a489337f0eb1" />
+        <option name="url" value="https://github.com/Dev-Santi/obligatorio_tecno.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2Xdf6HKhQwvx9qzgqOTEZl9f5Or" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Agustín Miranda/AquaProjects/obligatorio_tecno",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Agustín Miranda\AquaProjects\obligatorio_tecno\helpers" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Playwright.GetEmojis.spec.js">
+    <configuration name="CrearUnaListaEnElTablero" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <playwright-package value="$PROJECT_DIR$/node_modules/@playwright/test" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/tests/CrearUnaTarjetaEnUnTablero.spec.js" />
+      <test-names>
+        <test-name value="CrearUnaListaEnElTablero" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="CrearUnaTarjetaEnUnTablero" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <playwright-package value="$PROJECT_DIR$/node_modules/@playwright/test" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/tests/CrearUnaTarjetaEnUnTablero.spec.js" />
+      <test-names>
+        <test-name value="CrearUnaTarjetaEnUnTablero" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="CrearUnaTarjetaEnUnTablero.CrearUnaListaEnElTablero" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <playwright-package value="$PROJECT_DIR$/node_modules/@playwright/test" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/tests/CrearUnaTarjetaEnUnTablero.spec.js" />
+      <test-names>
+        <test-name value="CrearUnaTarjetaEnUnTablero" />
+        <test-name value="CrearUnaListaEnElTablero" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="GetEmojis.spec.js" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <playwright-package value="$PROJECT_DIR$/node_modules/@playwright/test" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/tests/GetEmojis.spec.js" />
+      <test-names>
+        <test-name value="GetEmojis.spec.js" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="ObtenerInformacionDelTablero" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <playwright-package value="$PROJECT_DIR$/node_modules/@playwright/test" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/tests/CrearUnaTarjetaEnUnTablero.spec.js" />
+      <test-names>
+        <test-name value="ObtenerInformacionDelTablero" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Playwright.GetEmojis.spec.js" />
+        <item itemvalue="Playwright.CrearUnaListaEnElTablero" />
+        <item itemvalue="Playwright.CrearUnaTarjetaEnUnTablero" />
+        <item itemvalue="Playwright.CrearUnaTarjetaEnUnTablero.CrearUnaListaEnElTablero" />
+        <item itemvalue="Playwright.ObtenerInformacionDelTablero" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3a1c786c-45ac-4c73-adc1-daf524b66dfd" name="Changes" comment="" />
+      <created>1698963702404</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698963702404</updated>
+      <workItem from="1698963703480" duration="20625000" />
+      <workItem from="1698993733105" duration="3768000" />
+      <workItem from="1699161195617" duration="11000" />
+      <workItem from="1699223657510" duration="1324000" />
+      <workItem from="1699225001957" duration="181000" />
+      <workItem from="1699225202008" duration="30000" />
+    </task>
+    <task id="LOCAL-00001" summary="Implementacion de CrearUnaTarjetaEnUnTablero.spec.js">
+      <option name="closed" value="true" />
+      <created>1698992962243</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698992962243</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Implementacion de authVariables en el GET /boards de la spec de ejemplo">
+      <option name="closed" value="true" />
+      <created>1698993809094</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698993809094</updated>
+    </task>
+    <task id="LOCAL-00003" summary="get Emojis">
+      <option name="closed" value="true" />
+      <created>1699224913532</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1699224913532</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="agus" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Implementacion de CrearUnaTarjetaEnUnTablero.spec.js" />
+    <MESSAGE value="Implementacion de authVariables en el GET /boards de la spec de ejemplo" />
+    <MESSAGE value="get Emojis" />
+    <option name="LAST_COMMIT_MESSAGE" value="get Emojis" />
+  </component>
+</project>
