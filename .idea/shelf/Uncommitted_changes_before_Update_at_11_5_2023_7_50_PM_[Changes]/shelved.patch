@@ -1,0 +1,259 @@
+Index: playwright.config.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// @ts-check\r\nconst { defineConfig, devices } = require(\"@playwright/test\");\r\n\r\n/**\r\n * Read environment variables from file.\r\n * https://github.com/motdotla/dotenv\r\n */\r\n// require('dotenv').config();\r\n\r\n/**\r\n * @see https://playwright.dev/docs/test-configuration\r\n */\r\nmodule.exports = defineConfig({\r\n  testDir: \"./tests\",\r\n  /* Run tests in files in parallel */\r\n  fullyParallel: true,\r\n  /* Fail the build on CI if you accidentally left test.only in the source code. */\r\n  forbidOnly: !!process.env.CI,\r\n  /* Retry on CI only */\r\n  retries: process.env.CI ? 2 : 0,\r\n  /* Opt out of parallel tests on CI. */\r\n  workers: process.env.CI ? 1 : undefined,\r\n  /* Reporter to use. See https://playwright.dev/docs/test-reporters */\r\n  reporter: \"html\",\r\n  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */\r\n  use: {\r\n    /* Base URL to use in actions like `await page.goto('/')`. */\r\n    baseURL: \"https://api.trello.com\",\r\n\r\n    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */\r\n    trace: \"on-first-retry\",\r\n  },\r\n\r\n  /* Configure projects for major browsers */\r\n  projects: [\r\n    {\r\n      name: \"chromium\",\r\n      use: { ...devices[\"Desktop Chrome\"] },\r\n    },\r\n\r\n    {\r\n      name: \"firefox\",\r\n      use: { ...devices[\"Desktop Firefox\"] },\r\n    },\r\n\r\n    {\r\n      name: \"webkit\",\r\n      use: { ...devices[\"Desktop Safari\"] },\r\n    },\r\n\r\n    /* Test against mobile viewports. */\r\n    // {\r\n    //   name: 'Mobile Chrome',\r\n    //   use: { ...devices['Pixel 5'] },\r\n    // },\r\n    // {\r\n    //   name: 'Mobile Safari',\r\n    //   use: { ...devices['iPhone 12'] },\r\n    // },\r\n\r\n    /* Test against branded browsers. */\r\n    // {\r\n    //   name: 'Microsoft Edge',\r\n    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },\r\n    // },\r\n    // {\r\n    //   name: 'Google Chrome',\r\n    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },\r\n    // },\r\n  ],\r\n\r\n  /* Run your local dev server before starting the tests */\r\n  // webServer: {\r\n  //   command: 'npm run start',\r\n  //   url: 'http://127.0.0.1:3000',\r\n  //   reuseExistingServer: !process.env.CI,\r\n  // },\r\n});\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/playwright.config.js b/playwright.config.js
+--- a/playwright.config.js	(revision 5ca52476e40c92a753f2d0b932e2ad222ab7ea6e)
++++ b/playwright.config.js	(date 1698981775193)
+@@ -1,5 +1,5 @@
+ // @ts-check
+-const { defineConfig, devices } = require("@playwright/test");
++const { defineConfig, devices, test, expect} = require("@playwright/test");
+ 
+ /**
+  * Read environment variables from file.
+@@ -27,6 +27,7 @@
+     /* Base URL to use in actions like `await page.goto('/')`. */
+     baseURL: "https://api.trello.com",
+ 
++
+     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+     trace: "on-first-retry",
+   },
+@@ -38,15 +39,15 @@
+       use: { ...devices["Desktop Chrome"] },
+     },
+ 
+-    {
+-      name: "firefox",
+-      use: { ...devices["Desktop Firefox"] },
+-    },
+-
+-    {
+-      name: "webkit",
+-      use: { ...devices["Desktop Safari"] },
+-    },
++    // {
++    //   name: "firefox",
++    //   use: { ...devices["Desktop Firefox"] },
++    // },
++    //
++    // {
++    //   name: "webkit",
++    //   use: { ...devices["Desktop Safari"] },
++    // },
+ 
+     /* Test against mobile viewports. */
+     // {
+Index: package-lock.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"name\": \"playwrigth\",\r\n  \"version\": \"1.0.0\",\r\n  \"lockfileVersion\": 3,\r\n  \"requires\": true,\r\n  \"packages\": {\r\n    \"\": {\r\n      \"name\": \"playwrigth\",\r\n      \"version\": \"1.0.0\",\r\n      \"license\": \"ISC\",\r\n      \"dependencies\": {\r\n        \"faker\": \"^5.5.3\"\r\n      },\r\n      \"devDependencies\": {\r\n        \"@playwright/test\": \"^1.39.0\",\r\n        \"@types/node\": \"^20.8.9\"\r\n      }\r\n    },\r\n    \"node_modules/@playwright/test\": {\r\n      \"version\": \"1.39.0\",\r\n      \"resolved\": \"https://registry.npmjs.org/@playwright/test/-/test-1.39.0.tgz\",\r\n      \"integrity\": \"sha512-3u1iFqgzl7zr004bGPYiN/5EZpRUSFddQBra8Rqll5N0/vfpqlP9I9EXqAoGacuAbX6c9Ulg/Cjqglp5VkK6UQ==\",\r\n      \"dev\": true,\r\n      \"dependencies\": {\r\n        \"playwright\": \"1.39.0\"\r\n      },\r\n      \"bin\": {\r\n        \"playwright\": \"cli.js\"\r\n      },\r\n      \"engines\": {\r\n        \"node\": \">=16\"\r\n      }\r\n    },\r\n    \"node_modules/@types/node\": {\r\n      \"version\": \"20.8.9\",\r\n      \"resolved\": \"https://registry.npmjs.org/@types/node/-/node-20.8.9.tgz\",\r\n      \"integrity\": \"sha512-UzykFsT3FhHb1h7yD4CA4YhBHq545JC0YnEz41xkipN88eKQtL6rSgocL5tbAP6Ola9Izm/Aw4Ora8He4x0BHg==\",\r\n      \"dev\": true,\r\n      \"dependencies\": {\r\n        \"undici-types\": \"~5.26.4\"\r\n      }\r\n    },\r\n    \"node_modules/faker\": {\r\n      \"version\": \"5.5.3\",\r\n      \"resolved\": \"https://registry.npmjs.org/faker/-/faker-5.5.3.tgz\",\r\n      \"integrity\": \"sha512-wLTv2a28wjUyWkbnX7u/ABZBkUkIF2fCd73V6P2oFqEGEktDfzWx4UxrSqtPRw0xPRAcjeAOIiJWqZm3pP4u3g==\"\r\n    },\r\n    \"node_modules/fsevents\": {\r\n      \"version\": \"2.3.2\",\r\n      \"resolved\": \"https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz\",\r\n      \"integrity\": \"sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==\",\r\n      \"dev\": true,\r\n      \"hasInstallScript\": true,\r\n      \"optional\": true,\r\n      \"os\": [\r\n        \"darwin\"\r\n      ],\r\n      \"engines\": {\r\n        \"node\": \"^8.16.0 || ^10.6.0 || >=11.0.0\"\r\n      }\r\n    },\r\n    \"node_modules/playwright\": {\r\n      \"version\": \"1.39.0\",\r\n      \"resolved\": \"https://registry.npmjs.org/playwright/-/playwright-1.39.0.tgz\",\r\n      \"integrity\": \"sha512-naE5QT11uC/Oiq0BwZ50gDmy8c8WLPRTEWuSSFVG2egBka/1qMoSqYQcROMT9zLwJ86oPofcTH2jBY/5wWOgIw==\",\r\n      \"dev\": true,\r\n      \"dependencies\": {\r\n        \"playwright-core\": \"1.39.0\"\r\n      },\r\n      \"bin\": {\r\n        \"playwright\": \"cli.js\"\r\n      },\r\n      \"engines\": {\r\n        \"node\": \">=16\"\r\n      },\r\n      \"optionalDependencies\": {\r\n        \"fsevents\": \"2.3.2\"\r\n      }\r\n    },\r\n    \"node_modules/playwright-core\": {\r\n      \"version\": \"1.39.0\",\r\n      \"resolved\": \"https://registry.npmjs.org/playwright-core/-/playwright-core-1.39.0.tgz\",\r\n      \"integrity\": \"sha512-+k4pdZgs1qiM+OUkSjx96YiKsXsmb59evFoqv8SKO067qBA+Z2s/dCzJij/ZhdQcs2zlTAgRKfeiiLm8PQ2qvw==\",\r\n      \"dev\": true,\r\n      \"bin\": {\r\n        \"playwright-core\": \"cli.js\"\r\n      },\r\n      \"engines\": {\r\n        \"node\": \">=16\"\r\n      }\r\n    },\r\n    \"node_modules/undici-types\": {\r\n      \"version\": \"5.26.5\",\r\n      \"resolved\": \"https://registry.npmjs.org/undici-types/-/undici-types-5.26.5.tgz\",\r\n      \"integrity\": \"sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==\",\r\n      \"dev\": true\r\n    }\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/package-lock.json b/package-lock.json
+--- a/package-lock.json	(revision 5ca52476e40c92a753f2d0b932e2ad222ab7ea6e)
++++ b/package-lock.json	(date 1698994968616)
+@@ -13,7 +13,8 @@
+       },
+       "devDependencies": {
+         "@playwright/test": "^1.39.0",
+-        "@types/node": "^20.8.9"
++        "@types/node": "^20.8.9",
++        "ajv": "^8.12.0"
+       }
+     },
+     "node_modules/@playwright/test": {
+@@ -40,11 +41,33 @@
+         "undici-types": "~5.26.4"
+       }
+     },
++    "node_modules/ajv": {
++      "version": "8.12.0",
++      "resolved": "https://registry.npmjs.org/ajv/-/ajv-8.12.0.tgz",
++      "integrity": "sha512-sRu1kpcO9yLtYxBKvqfTeh9KzZEwO3STyX1HT+4CaDzC6HpTGYhIhPIzj9XuKU7KYDwnaeh5hcOwjy1QuJzBPA==",
++      "dev": true,
++      "dependencies": {
++        "fast-deep-equal": "^3.1.1",
++        "json-schema-traverse": "^1.0.0",
++        "require-from-string": "^2.0.2",
++        "uri-js": "^4.2.2"
++      },
++      "funding": {
++        "type": "github",
++        "url": "https://github.com/sponsors/epoberezkin"
++      }
++    },
+     "node_modules/faker": {
+       "version": "5.5.3",
+       "resolved": "https://registry.npmjs.org/faker/-/faker-5.5.3.tgz",
+       "integrity": "sha512-wLTv2a28wjUyWkbnX7u/ABZBkUkIF2fCd73V6P2oFqEGEktDfzWx4UxrSqtPRw0xPRAcjeAOIiJWqZm3pP4u3g=="
+     },
++    "node_modules/fast-deep-equal": {
++      "version": "3.1.3",
++      "resolved": "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz",
++      "integrity": "sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==",
++      "dev": true
++    },
+     "node_modules/fsevents": {
+       "version": "2.3.2",
+       "resolved": "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz",
+@@ -59,6 +82,12 @@
+         "node": "^8.16.0 || ^10.6.0 || >=11.0.0"
+       }
+     },
++    "node_modules/json-schema-traverse": {
++      "version": "1.0.0",
++      "resolved": "https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-1.0.0.tgz",
++      "integrity": "sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug==",
++      "dev": true
++    },
+     "node_modules/playwright": {
+       "version": "1.39.0",
+       "resolved": "https://registry.npmjs.org/playwright/-/playwright-1.39.0.tgz",
+@@ -89,11 +118,38 @@
+         "node": ">=16"
+       }
+     },
++    "node_modules/punycode": {
++      "version": "2.3.1",
++      "resolved": "https://registry.npmjs.org/punycode/-/punycode-2.3.1.tgz",
++      "integrity": "sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==",
++      "dev": true,
++      "engines": {
++        "node": ">=6"
++      }
++    },
++    "node_modules/require-from-string": {
++      "version": "2.0.2",
++      "resolved": "https://registry.npmjs.org/require-from-string/-/require-from-string-2.0.2.tgz",
++      "integrity": "sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==",
++      "dev": true,
++      "engines": {
++        "node": ">=0.10.0"
++      }
++    },
+     "node_modules/undici-types": {
+       "version": "5.26.5",
+       "resolved": "https://registry.npmjs.org/undici-types/-/undici-types-5.26.5.tgz",
+       "integrity": "sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==",
+       "dev": true
++    },
++    "node_modules/uri-js": {
++      "version": "4.4.1",
++      "resolved": "https://registry.npmjs.org/uri-js/-/uri-js-4.4.1.tgz",
++      "integrity": "sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==",
++      "dev": true,
++      "dependencies": {
++        "punycode": "^2.1.0"
++      }
+     }
+   }
+ }
+Index: tests/GetEmojis.spec.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tests/GetEmojis.spec.js b/tests/GetEmojis.spec.js
+new file mode 100644
+--- /dev/null	(date 1699224296643)
++++ b/tests/GetEmojis.spec.js	(date 1699224296643)
+@@ -0,0 +1,72 @@
++import {test, expect} from '@playwright/test';
++const Ajv = require('ajv'); // AJV = 'Another JSON Validator'
++
++const emojiJsonSchema= {
++    type: 'object',
++    properties: {
++        name: { type: 'string' },
++        unified: { type: 'string' },
++        native: { type: 'string' },
++        shortName: { type: 'string' },
++        shortNames: {
++            type: 'array',
++            items: { type: 'string' },
++        },
++        text: { type: 'string' },
++        texts: { type: ['null', 'string'] }, // Permite que sea null o string
++        category: { type: 'string' },
++        sheetX: { type: 'number' },
++        sheetY: { type: 'number' },
++        tts: { type: 'string' },
++        keywords: {
++            type: 'array',
++            items: { type: 'string' }
++        }
++    },
++    required: [
++        'unified',
++        'name',
++        'native',
++        'shortName',
++        'shortNames',
++        'text',
++        'category',
++        'sheetX',
++        'sheetY',
++        'tts',
++        'keywords'
++    ]
++}
++
++test('GetEmojis.spec.js',async ({request}) => {
++    const getEmojis = await request.get(
++        '/1/emoji'
++    );
++    const res = await getEmojis.json();
++    const getEmojisResponse = res.trello;
++
++    // Crear una instancia de AJV y compilar el JSON schema
++    const ajv = new Ajv();
++    const validate = ajv.compile(emojiJsonSchema);
++    expect(getEmojis.ok).toBeTruthy();
++    expect(getEmojis.status()).toBe(200);
++    expect(getEmojisResponse).toBeDefined();
++    console.log(getEmojisResponse[0]);
++
++    // Validar el array de JSONs comparándolo con el schema
++    // el método validate es de AJV
++    for(let i = 0; i < getEmojisResponse.length; i++)
++        expect(validate(getEmojisResponse[i])).toBeTruthy();
++
++    // try{
++    //     for(let i = 0; i < getEmojisResponse.length; ++i) {
++    //         if (!validate(getEmojisResponse.trello[i])) {
++    //             console.error('Error de validación en el JSON con índice: ' + i);
++    //         }
++    //         expect(validate(getEmojisResponse[i])).toBeTruthy();
++    //     }
++    // } catch (error) {
++    //     console.error('Error al parsear el JSON de la respuesta: ', error);
++    // }
++
++}); // fin del test
+\ No newline at end of file
+Index: package.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"name\": \"playwrigth\",\r\n  \"version\": \"1.0.0\",\r\n  \"description\": \"\",\r\n  \"main\": \"index.js\",\r\n  \"scripts\": {},\r\n  \"keywords\": [],\r\n  \"author\": \"\",\r\n  \"license\": \"ISC\",\r\n  \"devDependencies\": {\r\n    \"@playwright/test\": \"^1.39.0\",\r\n    \"@types/node\": \"^20.8.9\"\r\n  },\r\n  \"dependencies\": {\r\n    \"faker\": \"^5.5.3\"\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/package.json b/package.json
+--- a/package.json	(revision 5ca52476e40c92a753f2d0b932e2ad222ab7ea6e)
++++ b/package.json	(date 1698994968616)
+@@ -9,7 +9,8 @@
+   "license": "ISC",
+   "devDependencies": {
+     "@playwright/test": "^1.39.0",
+-    "@types/node": "^20.8.9"
++    "@types/node": "^20.8.9",
++    "ajv": "^8.12.0"
+   },
+   "dependencies": {
+     "faker": "^5.5.3"

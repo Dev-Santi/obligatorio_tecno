@@ -1,10 +1,11 @@
-import {test, expect} from '@playwright/test';
+import { test, expect } from '@playwright/test';
 const faker = require('faker');
 
 // incluir los valores de autentificación
 const authVariables = require('../helpers/authVariables');
 const apiKey = authVariables.apiKey;
 const token = authVariables.token;
+const urlBase = authVariables.APIBaseUrl;
 
 /* GHERKIN SPEC
   Escenario: Crear una tarjeta en un tablero de Trello
@@ -14,9 +15,9 @@ const token = authVariables.token;
   Entonces la tarjeta se crea con éxito en el tablero
 */
 
-test('Obtener información del Tablero', async ({request}) => {
-    const getTablero= await request.get(
-        `/1/members/me/boards?key=${apiKey}&token=${token}`
+test('Obtener información del Tablero', async ({ request }) => {
+    const getTablero = await request.get(
+        `${urlBase}/1/members/me/boards?key=${apiKey}&token=${token}`
     );
     const getTableroResponse = await getTablero.json();
     // Assertions
@@ -32,11 +33,11 @@ test('Obtener información del Tablero', async ({request}) => {
     console.log(getTableroResponse[0]);
 }); // fin del test
 
-test('Crear una Lista y Tarjeta en el Tablero', async ({request}) => {
+test('Crear una Lista y Tarjeta en el Tablero', async ({ request }) => {
 
     // Obtener ID del tablero e ID de su creador (= mi ID de usuario en Trello)
     const getTablero = await request.get(
-        `/1/members/me/boards?key=${apiKey}&token=${token}`
+        `${urlBase}/1/members/me/boards?key=${apiKey}&token=${token}`
     );
     const getTableroResponse = await getTablero.json();
     let idTablero = getTableroResponse[0].id;
@@ -44,13 +45,13 @@ test('Crear una Lista y Tarjeta en el Tablero', async ({request}) => {
 
     // Crear la lista en la que vamos a colocar la tarjeta
     let nombreLista = faker.lorem.words(2); // Genera un nombre random de 2 palabras
-    const postLista = await request.post(`/1/boards/${idTablero}/lists?name=${nombreLista}&key=${apiKey}&token=${token}`,
+    const postLista = await request.post(`${urlBase}/1/boards/${idTablero}/lists?name=${nombreLista}&key=${apiKey}&token=${token}`,
         {
-                headers:{
-                    "Accept": "application/json" // quiero serializar a JSON la response
-                }
+            headers: {
+                "Accept": "application/json" // quiero serializar a JSON la response
+            }
         }); // fin de la request
-        const postListaResponse = await postLista.json();
+    const postListaResponse = await postLista.json();
     // Assertions
     expect(postLista.ok).toBeTruthy();
     expect(postLista.status()).toBe(200);
@@ -65,16 +66,16 @@ test('Crear una Lista y Tarjeta en el Tablero', async ({request}) => {
     // Crear la tarjeta
     const nombreTarjeta = faker.lorem.words(4);
     const descTarjeta = faker.lorem.words(15);
-    const postTarjeta = await request.post(`/1/cards?idList=${idLista}&key=${apiKey}&token=${token}`,
+    const postTarjeta = await request.post(`${urlBase}/1/cards?idList=${idLista}&key=${apiKey}&token=${token}`,
         {
-            data:{
+            data: {
                 // request payload
                 "name": nombreTarjeta,
                 "desc": descTarjeta,
                 "pos": "top", // la posiciona a la tarjeta en la cima de la lista
                 "idMembers": [idUsuario]
             },
-            headers:{
+            headers: {
                 "Accept": "application/json"
             }
         }); // fin de la request
