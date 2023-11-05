@@ -1,8 +1,9 @@
 let { test, expect } = require("@playwright/test");
 
-let APIKey = "77c3e77d0160daa898cc6e67519d291f";
-let APIToken = "ATTAbc64b7578a2339528fc4c8614ce5c1529952f979e69bbfcbdb8f74598df30ad6CFA2A0BC";
-let urlBase = "https://api.trello.com";
+const authVariables = require("../helpers/authVariables");
+const APIKey = authVariables.apiKey;
+const APIToken = authVariables.token;
+const urlBase = authVariables.APIBaseUrl;
 
 let idTablero = "gDSmvici"; // Identificador del tablero donde se realizan los cambios
 let idNota = "OVXHxZhS"; // Identificador de la nota que vamos a cambiar de lista.
