@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a1c786c-45ac-4c73-adc1-daf524b66dfd" name="Changes" comment="" />
+    <list default="true" id="3a1c786c-45ac-4c73-adc1-daf524b66dfd" name="Changes" comment="commitMarianela">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/playwright.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/playwright.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test-front/test-create-card.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test-front/test-create-card.spec.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,6 +62,7 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Playwright.test-create-card.spec.js.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -78,7 +83,7 @@
       <recent name="C:\Users\Agustín Miranda\AquaProjects\obligatorio_tecno\helpers" />
     </key>
   </component>
-  <component name="RunManager" selected="Playwright.GetEmojis.spec.js">
+  <component name="RunManager" selected="Playwright.test-create-card.spec.js">
     <configuration name="CrearUnaListaEnElTablero" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <playwright-package value="$PROJECT_DIR$/node_modules/@playwright/test" />
@@ -128,25 +133,22 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="ObtenerInformacionDelTablero" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
+    <configuration name="test-create-card.spec.js" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <playwright-package value="$PROJECT_DIR$/node_modules/@playwright/test" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/tests/CrearUnaTarjetaEnUnTablero.spec.js" />
-      <test-names>
-        <test-name value="ObtenerInformacionDelTablero" />
-      </test-names>
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/tests/test-front/test-create-card.spec.js" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Playwright.test-create-card.spec.js" />
         <item itemvalue="Playwright.GetEmojis.spec.js" />
         <item itemvalue="Playwright.CrearUnaListaEnElTablero" />
         <item itemvalue="Playwright.CrearUnaTarjetaEnUnTablero" />
         <item itemvalue="Playwright.CrearUnaTarjetaEnUnTablero.CrearUnaListaEnElTablero" />
-        <item itemvalue="Playwright.ObtenerInformacionDelTablero" />
       </list>
     </recent_temporary>
   </component>
@@ -223,6 +225,7 @@
     <MESSAGE value="Implementacion de CrearUnaTarjetaEnUnTablero.spec.js" />
     <MESSAGE value="Implementacion de authVariables en el GET /boards de la spec de ejemplo" />
     <MESSAGE value="get Emojis" />
-    <option name="LAST_COMMIT_MESSAGE" value="get Emojis" />
+    <MESSAGE value="commitMarianela" />
+    <option name="LAST_COMMIT_MESSAGE" value="commitMarianela" />
   </component>
 </project>

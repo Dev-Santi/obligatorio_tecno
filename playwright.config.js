@@ -24,6 +24,7 @@ module.exports = defineConfig({
   reporter: "html",
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    locale: 'en-GB',
     /* Base URL to use in actions like `await page.goto('/')`. */
     //baseURL: "https://api.trello.com",
 
