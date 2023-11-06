@@ -1,9 +1,9 @@
 let { test, expect } = require("@playwright/test");
+let authVariables = require("../helpers/authVariables");
 
-const authVariables = require("../helpers/authVariables");
-const APIKey = authVariables.apiKey;
-const APIToken = authVariables.token;
-const urlBase = authVariables.APIBaseUrl;
+let APIKey = authVariables.apiKey;
+let APIToken = authVariables.token;
+let urlBase = authVariables.APIBaseUrl;
 
 let idTablero = "gDSmvici"; // Identificador del tablero donde se realizan los cambios
 let idNota = "OVXHxZhS"; // Identificador de la nota que vamos a cambiar de lista.
