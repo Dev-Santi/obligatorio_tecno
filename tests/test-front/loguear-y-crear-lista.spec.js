@@ -51,11 +51,17 @@ test("Inicio de sesion y creación de lista de tarjetas", async function ({ page
   const addListBtn = page.getByText(/^Add list$/);
   await addListBtn.click();
   const newList = page.getByLabel(newListName);
-  expect(await newList.innerHTML()).toMatch(newListName);
+  expect(await newList.innerHTML()).toBe(newListName);
+
+  await manualWaiting(page, 3000);
 });
 
 /* ------- */
 
 function randomNumber() {
   return Math.floor(Math.random() * 1000000);
+}
+
+async function manualWaiting(page, time) {
+  await page.waitForTimeout(time);
 }
