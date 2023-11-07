@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "playTest": "npx playwright test"
+    "playTest": "npx playwright test",
+    "playFront-ui": "npx playwright test loguear-y-crear-lista.spec.js --ui",
+    "playFront": "npx playwright test loguear-y-crear-lista.spec.js"
   },
   "keywords": [],
   "author": "",

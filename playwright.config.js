@@ -1,5 +1,5 @@
 // @ts-check
-const { defineConfig, devices, test, expect} = require("@playwright/test");
+const { defineConfig, devices, test, expect } = require("@playwright/test");
 
 /**
  * Read environment variables from file.
@@ -24,10 +24,9 @@ module.exports = defineConfig({
   reporter: "html",
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    locale: 'en-GB',
+    locale: "en-GB",
     /* Base URL to use in actions like `await page.goto('/')`. */
     //baseURL: "https://api.trello.com",
-
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
