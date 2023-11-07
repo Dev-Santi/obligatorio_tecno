@@ -7,7 +7,8 @@
     "playTest": "npx playwright test",
     "playFront-headed": "npx playwright test loguear-y-crear-lista.spec.js --headed",
     "playFront-ui": "npx playwright test loguear-y-crear-lista.spec.js --ui",
-    "playFront": "npx playwright test loguear-y-crear-lista.spec.js"
+    "playFront": "npx playwright test loguear-y-crear-lista.spec.js",
+    "playPOM": "npx playwright test /test-front/loguear-y-crear-lista-POM.spec.js --headed"
   },
   "keywords": [],
   "author": "",

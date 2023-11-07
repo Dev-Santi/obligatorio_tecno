@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a1c786c-45ac-4c73-adc1-daf524b66dfd" name="Changes" comment="commitMarianela">
+    <list default="true" id="3a1c786c-45ac-4c73-adc1-daf524b66dfd" name="Changes" comment="get Emojis">
+      <change afterPath="$PROJECT_DIR$/helpers/frontEndLoginVariables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/Dashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/Login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/Tablero.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test-front/loguear-y-crear-lista-POM.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/playwright.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/playwright.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test-front/test-create-card.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test-front/test-create-card.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/authVariables.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/authVariables.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Playwright Test JS.spec" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -62,13 +68,15 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Playwright.Inicio de sesion y creación de lista de tarjetas.executor": "Run",
     "Playwright.test-create-card.spec.js.executor": "Run",
+    "Playwright.test.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Agustín Miranda/AquaProjects/obligatorio_tecno",
+    "last_opened_file_path": "C:/Users/Agustín Miranda/AquaProjects/obligatorio_tecno/tests/test-front",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,11 +87,15 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Agustín Miranda\AquaProjects\obligatorio_tecno\tests\test-front" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Agustín Miranda\AquaProjects\obligatorio_tecno" />
       <recent name="C:\Users\Agustín Miranda\AquaProjects\obligatorio_tecno\helpers" />
     </key>
   </component>
-  <component name="RunManager" selected="Playwright.test-create-card.spec.js">
+  <component name="RunManager" selected="Playwright.Inicio de sesion y creación de lista de tarjetas">
     <configuration name="CrearUnaListaEnElTablero" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <playwright-package value="$PROJECT_DIR$/node_modules/@playwright/test" />
@@ -92,31 +104,6 @@
       <scope-kind value="TEST" />
       <test-file value="$PROJECT_DIR$/tests/CrearUnaTarjetaEnUnTablero.spec.js" />
       <test-names>
-        <test-name value="CrearUnaListaEnElTablero" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="CrearUnaTarjetaEnUnTablero" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <playwright-package value="$PROJECT_DIR$/node_modules/@playwright/test" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/tests/CrearUnaTarjetaEnUnTablero.spec.js" />
-      <test-names>
-        <test-name value="CrearUnaTarjetaEnUnTablero" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="CrearUnaTarjetaEnUnTablero.CrearUnaListaEnElTablero" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <playwright-package value="$PROJECT_DIR$/node_modules/@playwright/test" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/tests/CrearUnaTarjetaEnUnTablero.spec.js" />
-      <test-names>
-        <test-name value="CrearUnaTarjetaEnUnTablero" />
         <test-name value="CrearUnaListaEnElTablero" />
       </test-names>
       <method v="2" />
@@ -133,6 +120,18 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="Inicio de sesion y creación de lista de tarjetas" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <playwright-package value="$PROJECT_DIR$/node_modules/@playwright/test" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/tests/test-front/loguear-y-crear-lista-POM.spec.js" />
+      <test-names>
+        <test-name value="Inicio de sesion y creación de lista de tarjetas" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="test-create-card.spec.js" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <playwright-package value="$PROJECT_DIR$/node_modules/@playwright/test" />
@@ -142,13 +141,25 @@
       <test-file value="$PROJECT_DIR$/tests/test-front/test-create-card.spec.js" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <playwright-package value="$PROJECT_DIR$/node_modules/@playwright/test" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/tests/test-front/test-create-card.spec.js" />
+      <test-names>
+        <test-name value="test" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Playwright.Inicio de sesion y creación de lista de tarjetas" />
+        <item itemvalue="Playwright.test" />
         <item itemvalue="Playwright.test-create-card.spec.js" />
         <item itemvalue="Playwright.GetEmojis.spec.js" />
         <item itemvalue="Playwright.CrearUnaListaEnElTablero" />
-        <item itemvalue="Playwright.CrearUnaTarjetaEnUnTablero" />
-        <item itemvalue="Playwright.CrearUnaTarjetaEnUnTablero.CrearUnaListaEnElTablero" />
       </list>
     </recent_temporary>
   </component>
@@ -166,6 +177,8 @@
       <workItem from="1699223657510" duration="1324000" />
       <workItem from="1699225001957" duration="181000" />
       <workItem from="1699225202008" duration="30000" />
+      <workItem from="1699326870616" duration="819000" />
+      <workItem from="1699345016884" duration="10336000" />
     </task>
     <task id="LOCAL-00001" summary="Implementacion de CrearUnaTarjetaEnUnTablero.spec.js">
       <option name="closed" value="true" />
