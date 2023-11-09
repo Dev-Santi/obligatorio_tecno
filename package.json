@@ -1,5 +1,5 @@
 {
-  "name": "playwrigth",
+  "name": "playwright",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,9 @@
     "playFront-headed": "npx playwright test loguear-y-crear-lista.spec.js --headed",
     "playFront-ui": "npx playwright test loguear-y-crear-lista.spec.js --ui",
     "playFront": "npx playwright test loguear-y-crear-lista.spec.js",
-    "playPOM": "npx playwright test /test-front/loguear-y-crear-lista-POM.spec.js --headed"
+    "playPOM": "npx playwright test /test-front/loguear-y-crear-lista-POM.spec.js --headed",
+    "artillery-run-windows": "rmdir /s /q artillery-report && mkdir artillery-report && artillery run tests/test-performance/country-load-test.yml --output artillery-report/results.json && cd artillery-report && artillery report results.json && cd ../",
+    "artillery-run-mac": "rm -rf artillery-report && mkdir artillery-report && artillery run tests/test-performance/country-load-test.yml --output artillery-report/results.json && cd artillery-report && artillery report results.json && cd .."
   },
   "keywords": [],
   "author": "",

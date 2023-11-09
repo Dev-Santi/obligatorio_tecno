@@ -1,0 +1,48 @@
+config:
+  # restCountries es una API que devuelve información sobre países y no requiere una apiKey
+  target: https://restcountries.com/v3.1
+  phases:
+    - duration: 15
+      arrivalRate: 1
+      rampTo: 3
+      name: Warm up phase
+      # durante el warm up se van generando 1 usuario virtual por segundo
+      # Escala hasta 3 usuarios virtuales nuevos / segundo
+    - duration: 12
+      arrivalRate: 3
+      rampTo: 7
+      name: Ramp up load
+    - duration: 10
+      arrivalRate: 7
+      rampTo: 15
+      name: Spike phase
+      # La fase spike es donde ocurre el mayor tráfico del endpoint
+      # Entre las tres fases se crean 200 usuarios virtuales
+  # https://docs.art/reference/extensions
+  plugins:
+    ensure: {}
+    apdex: {}
+    metrics-by-endpoint: {}
+  # apdex es el índice de satisfacción del usuario
+  # (una request es satisfactoria si su tiempo de respuesta, threshold, es como máximo 200 milisegundos)
+  # (una request es tolerable si se completa en un tiempo igual hasta 4 veces el umbral del threshold)
+  # (una request es de baja calidad si su tiempo de respuesta es mayor a 4 veces el threshold (0.8 sec))
+  apdex:
+    threshold: 200
+  ensure:
+    # assertions para medir el tiempo de resupesta en los percentiles más altos
+    thresholds:
+      - # al menos el 99% de las requests deben tener un threshold menor o igual a 600 milisegundos (0.6 sec)
+      - http.response_time.p99: 600
+        # al menos el 95% de las requests deben tener un threshold menor o igual a 500 milisegundos (0.5 sec)
+      - http.response_time.p95: 500
+scenarios:
+  - flow:
+      - loop:
+          - get:
+              url: "/name/uruguay"
+          - get:
+              url: "/name/argentina"
+          - get:
+              url: "/name/brazil"
+        count: 10
