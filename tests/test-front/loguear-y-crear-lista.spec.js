@@ -11,7 +11,7 @@ const newListName = `${randomNumber()} - Lista creada desde test FrontEnd`;
 
 /* ------- */
 
-test("Inicio de sesion y creación de lista de tarjetas", async function ({ page }) {
+test("Inicio de sesión y creación de lista de tarjetas", async function ({ page }) {
   await page.goto(logInURL);
   expect(page.url()).toBe(logInURL);
 

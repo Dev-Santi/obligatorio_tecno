@@ -23,7 +23,7 @@ const boardsUrl = `https://trello.com/u/${username}/boards`;
 
 const boardURL = "https://trello.com/b/gDSmvici/mi-tablero-de-trello";
 
-  test("Inicio de sesion y creación de lista de tarjetas", async function ({page}) {
+  test("[Page Object Model] Inicio de sesión y creación de lista de tarjetas", async function ({page}) {
 
     // Login
     // Instanciamos la página del Login

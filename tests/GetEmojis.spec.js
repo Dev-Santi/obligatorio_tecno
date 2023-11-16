@@ -1,72 +1,38 @@
 import {test, expect} from '@playwright/test';
+const authVariables = require('../helpers/authVariables');
+const baseUrl = authVariables.APIBaseUrl;
+const emojiJsonSchema = require('../helpers/JSONs/emojiSchema');
 const Ajv = require('ajv'); // AJV = 'Another JSON Validator'
 
-const emojiJsonSchema= {
-    type: 'object',
-    properties: {
-        name: { type: 'string' },
-        unified: { type: 'string' },
-        native: { type: 'string' },
-        shortName: { type: 'string' },
-        shortNames: {
-            type: 'array',
-            items: { type: 'string' },
-        },
-        text: { type: 'string' },
-        texts: { type: ['null', 'string'] }, // Permite que sea null o string
-        category: { type: 'string' },
-        sheetX: { type: 'number' },
-        sheetY: { type: 'number' },
-        tts: { type: 'string' },
-        keywords: {
-            type: 'array',
-            items: { type: 'string' }
-        }
-    },
-    required: [
-        'unified',
-        'name',
-        'native',
-        'shortName',
-        'shortNames',
-        'text',
-        'category',
-        'sheetX',
-        'sheetY',
-        'tts',
-        'keywords'
-    ]
-}
-
-test('GetEmojis.spec.js',async ({request}) => {
+test("Verificar integridad de JSONs con Emojis", async ({request}) => {
     const getEmojis = await request.get(
-        '/1/emoji'
+        `${baseUrl}/1/emoji`
     );
     const res = await getEmojis.json();
     const getEmojisResponse = res.trello;
 
-    // Crear una instancia de AJV y compilar el JSON schema
-    const ajv = new Ajv();
-    const validate = ajv.compile(emojiJsonSchema);
     expect(getEmojis.ok).toBeTruthy();
     expect(getEmojis.status()).toBe(200);
     expect(getEmojisResponse).toBeDefined();
-    console.log(getEmojisResponse[0]);
+
+    console.log(getEmojisResponse);
+
+    // Crear una instancia de AJV y compilar el JSON schema
+    const ajv = new Ajv({ strictTypes: false }); /* el {strictTypes: false} permite que
+    los atributos del JSON schema puedan tener varios tipos posibles */
 
     // Validar el array de JSONs comparándolo con el schema
-    // el método validate es de AJV
-    for(let i = 0; i < getEmojisResponse.length; i++)
-        expect(validate(getEmojisResponse[i])).toBeTruthy();
+    // el método validate es de AJV (el schema se compila una sola vez y se usa en todas las iteraciones)
+    const validate = ajv.compile(emojiJsonSchema);
 
-    // try{
-    //     for(let i = 0; i < getEmojisResponse.length; ++i) {
-    //         if (!validate(getEmojisResponse.trello[i])) {
-    //             console.error('Error de validación en el JSON con índice: ' + i);
-    //         }
-    //         expect(validate(getEmojisResponse[i])).toBeTruthy();
-    //     }
-    // } catch (error) {
-    //     console.error('Error al parsear el JSON de la respuesta: ', error);
-    // }
+    try{
+        for(let i = 0; i < getEmojisResponse.length; ++i) {
+            if (!validate(getEmojisResponse[i]))
+                console.error("Error de validación en el JSON con índice: " + i);
+            expect(validate(getEmojisResponse[i])).toBeTruthy();
+        }
+    } catch (error) {
+        console.error("Error al parsear el JSON de la respuesta: ", error);
+    }
 
 }); // fin del test
